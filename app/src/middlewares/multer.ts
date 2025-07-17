@@ -8,7 +8,7 @@ export const uploadSingleFileMiddleware = (req: Request, res: Response, next: Ne
     const multer_obj = multer({
         storage: multer.memoryStorage(),
         limits: {
-            fileSize: 2 ** 20 * 30 // 30 MegaBytese
+            fileSize: 2 ** 20 * 30 // 30 MegaBytes
         }
     })
 

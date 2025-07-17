@@ -4,18 +4,8 @@ import cors from 'cors'
 import { rateLimit } from 'express-rate-limit'
 // Loading environment variables
 import dotenv from 'dotenv'
-import fs from 'fs'
-import path from 'path'
 
-const env = process.env.NODE_ENV || 'development'
-const envFile = `.env.${env}`
-const envPath = path.resolve(__dirname, '..', envFile)
-
-if (fs.existsSync(envPath)) {
-  dotenv.config({ path: envPath })
-} else {
-  console.warn(`Warning: ${envFile} does not exist!`)
-}
+dotenv.config()
 
 // Routes
 import routes from './routes'
@@ -51,4 +41,4 @@ class App {
 
 const app = new App()
 
-app.server.listen(process.env.PORT, () => console.log(`Server up on port ${process.env.PORT}. Environment (${env})`))
+app.server.listen(process.env.PORT, () => console.log(`Server up on port ${process.env.PORT}.`))

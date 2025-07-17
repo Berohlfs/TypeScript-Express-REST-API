@@ -1,8 +1,0 @@
-node_modules
-.npm
-dist
-temp
-
-.env
-.env.development
-.env.production
